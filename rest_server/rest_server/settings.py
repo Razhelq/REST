@@ -83,8 +83,8 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'NAME': 'rest_server',
         'ENGINE': 'django.db.backends.postgresql',
-        'USER': '',
-        'PASSWORD': '',
+        'USER': 'postgres',
+        'PASSWORD': 'coderslab',
     }
 }
 

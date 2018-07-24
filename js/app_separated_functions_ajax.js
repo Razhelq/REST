@@ -56,9 +56,9 @@ function getBook(event) {
 	    dataType: "json"
 	}).done(function(result) {
 		var ul = $('<ul>');
-		ul.append( $('<li>').text( result.author) );
-		ul.append( $('<li>').text( result.publisher)   );
-		ul.append( $('<li>').text( result.isbn)   );
+		ul.append( $('<li>').text(result.author));
+		ul.append( $('<li>').text(result.publisher));
+		ul.append( $('<li>').text(result.isbn));
 
 		wanted_div.html( ul );
 
@@ -78,7 +78,7 @@ function prepareBookBox(title, id) {
 	h2.data('id', id);
 
 	div_content.append(h2.css('display', 'inline'));
-	div_content.append( $("<div>"));
+	div_content.append($("<div>"));
 	div_content.append(delete_book);
 }
 
