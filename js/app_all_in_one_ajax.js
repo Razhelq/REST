@@ -30,11 +30,16 @@ $(function() {
 		}).done(function(result) {
 
 			if (result != undefined) {
+
+				// Displays all books
 				for (var i=0; i<result.length; i++) {
 					prepareBookBox(result[i].title, result[i].id);
 				}
+
+				// Inserts and displays new book
 				prepareBookBox(result.title, result.id);
 
+				// Displays book details
 				var ul = $('<ul>');
                 ul.append( $('<li>').text(result.author));
                 ul.append( $('<li>').text(result.publisher));
@@ -43,6 +48,7 @@ $(function() {
                 wanted_div.hide();
                 wanted_div.show('slow');
 			} else {
+				// Refreshes the page after a book deletion
 			    location.reload();
             }
 
