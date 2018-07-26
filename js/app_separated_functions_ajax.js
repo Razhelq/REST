@@ -11,6 +11,7 @@ $('form').on('submit', insertBook);
 
 function deleteBook(event) {
 	var id = $(this).data('id');
+	var del_to_del = $(this);
 
 	$.ajax({
 		url: base_url + id,
@@ -19,7 +20,10 @@ function deleteBook(event) {
 		dataType: "json",
 	}).done(function() {
 		console.log('Książka usunięta');
-		location.reload();
+		del_to_del.prev().prev().remove();
+		del_to_del.prev().remove();
+		del_to_del.remove();
+
 	}).fail(function(xhr, status, err) {
 		console.log(xhr);
 		console.log(status, err);

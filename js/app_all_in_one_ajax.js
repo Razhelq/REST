@@ -16,6 +16,7 @@ $(function() {
 
 		var id = $(this).data('id');
 		var wanted_div = $(this).next();
+		var del_to_del = $(this);
 
 		var base_url = 'http://127.0.0.1:8000/book/';
 		if (id) {
@@ -28,10 +29,9 @@ $(function() {
 			type: $(this).data('type'),
 			dataType: "json"
 		}).done(function(result) {
-
 			if (result != undefined) {
 
-				// Displays all books
+				// Clean and displays all books
 				for (var i=0; i<result.length; i++) {
 					prepareBookBox(result[i].title, result[i].id);
 				}
@@ -47,10 +47,15 @@ $(function() {
                 wanted_div.html(ul);
                 wanted_div.hide();
                 wanted_div.show('slow');
+
 			} else {
-				// Refreshes the page after a book deletion
-			    location.reload();
-            }
+
+				// Removes selected elements
+				del_to_del.prev().prev().remove();
+				del_to_del.prev().remove();
+				del_to_del.remove();
+
+			}
 
 		}).fail(function(xhr, status, err) {
 			console.log(xhr);
