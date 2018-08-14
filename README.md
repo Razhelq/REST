@@ -3,7 +3,7 @@
 rest, ajax, jquery, js, django
 
 
-REST-Library - front-end application on django server. 
+REST-Library - front-end application. 
 Allows to display and manage books in the online library using jQuery with AJAX on Django server with REST functionalities.
 
 The application contains:
